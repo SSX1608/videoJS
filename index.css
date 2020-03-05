@@ -1,0 +1,289 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url(imgs/bg_img.png) no-repeat;
+    background-size: 100% 100%;
+}
+.tv_wrap{
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1190px;
+    height: 642px;
+    background: url(imgs/TV_img.png) no-repeat;
+    background-size: 100% 100%;
+}
+.sideBoard {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.offOn_btn {
+    position: absolute;
+    top: 74px;
+    left: 114px;
+    width: 79px;
+    height: 83px;
+    cursor: pointer;
+}
+.offOn_btn_green {
+    background: url(imgs/btn_img.png) no-repeat;
+    background-size: 100% 100%;
+}
+.offOn_btn_red {
+    background: url(imgs/btn_img_red.png) no-repeat;
+    background-size: 100% 100%;
+}
+.offOn_btn_gray {
+    background: url(imgs/btn_img_gray.png) no-repeat;
+    background-size: 100% 100%;
+}
+.videoList {
+    position: absolute;
+    left: 84px;
+    top: 164px;
+    width: 140px;
+    height: 330px;
+    background:url(imgs/videoList.png) no-repeat;
+    background-size: 100% 100%;
+    overflow-y: scroll;
+    padding-top: 23px;
+    box-sizing: border-box;
+}
+.blank_content {
+    width: 100%;
+    position: absolute;
+    top: 52px;
+    left: 0;
+}
+.blankIcon {
+    position: absolute;
+    top: 28px;
+    left: 24px;
+    width: 90px;
+    height: 62px;
+    background: url(imgs/blank_img.png) no-repeat;
+    background-size: 100% 100%;
+}
+.tipsLine {
+    position: absolute;
+    top: 114px;
+    width: 100%;
+    font-size:10px;
+    font-family:Microsoft YaHei;
+    font-weight:300;
+    line-height:16px;
+    color:rgba(83,45,8,1);
+    text-align: center;
+    letter-spacing: 1px;
+}
+.tipsLine p{
+    margin: 0;
+}
+body, div, ul, li {
+    padding: 0px;
+    margin: 0px;
+}
+.firstList {
+    padding-inline-start: 20px;
+    padding-top: 10px;
+}
+.list_content .firstItem {
+    cursor: pointer;
+    font-size:14px;
+    font-family:Microsoft YaHei;
+    font-weight:bold;
+    line-height:20px;
+    color:rgba(83,45,8,1);
+}
+.firstList li.firstItem {
+    list-style: none;
+    background: url("imgs/list_icon.png") no-repeat;
+    background-position-y: 5px;
+    background-size: 7px 7px;
+    padding-left: 12px;
+    margin-bottom: 5px;
+}
+.secondList {
+    list-style: none;
+    font-size:12px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:19px;
+    color:rgba(14,48,78,1);
+    margin-left: -12px;
+}
+.secondList li {
+    padding-left: 12px;
+    width: 70px;
+    box-sizing: border-box;
+}
+.secondList .activeLi {
+    background:linear-gradient(90deg,rgba(69,98,121,0.54) 0%,rgba(69,98,121,0.54) 100%);
+    border-radius:16px;
+}
+.midContent {
+    position: absolute;
+    top: 67px;
+    left: 260px;
+    width: 810px;
+    height: 452px;
+}
+.loginItem .title {
+    font-size:18px;
+    text-align: center;
+    font-family:FZDaHei-B02S;
+    font-weight:600;
+    line-height:34px;
+    color:rgba(255,255,255,1);
+    margin-top:130px;
+    margin-bottom: 24px;
+}
+.loginItem .inputBg {
+    width:212px;
+    height:33px;
+    background:rgba(255,255,255,1);
+    opacity:1;
+    border-radius:19px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+    line-height: 36px;
+    overflow: hidden;
+}
+.user::before{
+    background: url(imgs/userIcon.png) no-repeat;
+}
+.password::before{
+    background: url(imgs/pwdIcon.png) no-repeat;
+}
+.inputBg::before {
+    display: inline-block;
+    content: '';
+    background-size: 100% 100%;
+    width: 14px;
+    height: 16px;
+}
+.inputBg input {
+    border: none;
+    outline-color: invert ;
+	outline-style: none ;
+	outline-width: 0px ;
+	border: none ;
+	border-style: none ;
+	text-shadow: none ;
+	-webkit-appearance: none ;
+	-webkit-user-select: text ;
+	outline-color: transparent ;
+    box-shadow: none;
+    height: 33px;
+    vertical-align: middle;
+    margin-top: -7px;
+    position: relative;
+    left:20px;
+}
+
+.inputBg input::-webkit-input-placeholder { /* WebKit browsers */ 
+    font-size:10px;
+    font-family:Microsoft YaHei;
+    font-weight:300;
+    color:rgba(58,86,110,.8);
+} 
+.inputBg input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+    font-size:10px;
+    font-family:Microsoft YaHei;
+    font-weight:300;
+    color:rgba(58,86,110,.8); 
+} 
+.inputBg input::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+    font-size:10px;
+    font-family:Microsoft YaHei;
+    font-weight:300;
+    color:rgba(58,86,110,.8); 
+} 
+.inputBg input:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+    font-size:10px;
+    font-family:Microsoft YaHei;
+    font-weight:300;
+    color:rgba(58,86,110,.8); 
+}
+.playIcon .icon{
+    width: 187px;
+    height: 187px;
+    margin: auto;
+    background: url(imgs/playIcon.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 118px;
+    cursor: pointer;
+}
+[v-cloak] {
+    display: none
+}
+.listTitle {
+    margin: 0;
+}
+.hideList {
+    height: 0;
+    overflow: hidden;
+}
+.animateGo {
+    /* transition:all linear 1s; */
+    transition:width 2s, height 2s;
+    -moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+    -webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+    -o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+}
+::-webkit-scrollbar{
+    display:none;
+}
+
+.loginButton {
+    position: absolute;
+    top: 0;
+    right: 256px;
+    width:32px;
+    height:32px;
+    line-height: 32px;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+    border-radius:50%;
+    cursor: pointer;
+    text-align: center;
+}
+.loginButton img {
+    width: 16px;
+}
+
+.toastStyle {
+    position: absolute;
+    max-width: 80%;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 1000;
+    -webkit-transition: opacity .3s linear;
+    transition: opacity .3s linear;
+    padding: 10px;
+    padding-top: 8px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.textSpan {
+    font-size: 14px;
+    display: block;
+    text-align: center;
+}
+
+
+

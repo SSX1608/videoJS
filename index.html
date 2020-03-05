@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>video</title>
+    <link rel="stylesheet" href="index.css" />
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css" />
+
+    <link href="libs/video/css/video-js.min.css" rel="stylesheet" />
+    <script src="libs/video/js/video.min.js"></script>
+    <!--	<script src="libs/video/js/videojs-flash.min.js"></script>-->
+    <script src="libs/vue.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+  </head>
+  <body>
+    <div class="container" id="myApp" v-cloak>
+      <div class="tv_wrap">
+        <div class="sideBoard">
+          <div v-if="isLogin=='gray'" class="offOn_btn offOn_btn_gray" @click="getLogin('gray')"></div>
+          <div v-else-if="isLogin=='green'" class="offOn_btn offOn_btn_green"></div>
+          <div v-else class="offOn_btn offOn_btn_red" @click="getLogin('out')"></div>
+          <div class="videoList">
+            <div class="list_content" v-if="isLogin == 'red'">
+              <ul class="firstList">
+                <li
+                  class="firstItem"
+                  v-for="(obj,index) in listArray"
+                  :key="index"
+                >
+                  <p class="listTitle" @click="slidTogle(index)">
+                    {{obj.name}}
+                  </p>
+                  <ul class="secondList" v-if="obj.children">
+                    <div
+                      class="animateGo"
+                      :class="{hideList:checkedItem !== index}"
+                    >
+                      <li
+                        v-for="(item,chiIndex) in obj.children"
+                        :key="chiIndex"
+                        :class="{activeLi:chiIndex==secondCheckdeIndex}"
+                        @click="secondSelect(chiIndex,item.url)"
+                      >
+                        {{item.name}}
+                      </li>
+                    </div>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="blank_content" v-else>
+              <div class="blankIcon"></div>
+              <div class="tipsLine">
+                <p>没有找到视频列表！</p>
+                <p>请登录账户</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div id="contentWrap" class="midContent" v-show="isLogin !='gray'">
+          <div class="loginItem" v-show="isLogin == 'green'">
+            <p class="title">请登录账户观看视频！</p>
+            <p class="inputBg user">
+              <input
+                type="text"
+                placeholder="请输入您的账号"
+                v-model="loginUsername"
+              />
+            </p>
+            <div style="position: relative;">
+              <p class="inputBg password">
+                <input
+                  type="text"
+                  placeholder="请输入您的密码"
+                  v-model="loginPassword"
+                />
+              </p>
+              <div class="loginButton" @click="getLogin('in')">
+                <img src="imgs/loginArrow.png" alt="">
+              </div>
+            </div>
+            
+            <!-- <p class="loginButton" @click="getLogin('in')">登陆</p> -->
+          </div>
+          <div class="playIcon" v-show="isLogin == 'red'">
+            <p class="icon" v-show="!playAction" @click="playGo"></p>
+            <div v-show="playAction">
+              <video ref="videoPlayer" class="video-js" width="810" height="452">
+                <source src="source/5.mp4" type="video/mp4" />
+                <!-- <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" /> -->
+                <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm" />
+                <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg" />
+              </video>
+            </div>
+          </div>
+          <div class="toastStyle" :style="opacityStyle">
+              <span class="textSpan">{{tipsContent}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
